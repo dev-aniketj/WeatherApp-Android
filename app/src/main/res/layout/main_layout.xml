@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/koho_regular"
-                android:text="JAIPUR"
+                android:text=""
                 android:textAllCaps="true"
                 android:textColor="@color/textColor"
                 android:textSize="32sp" />
@@ -108,7 +108,7 @@
                     android:layout_marginTop="-4dp"
                     android:fontFamily="@font/koho_regular"
                     android:letterSpacing="0.1"
-                    android:text="Saturday 10:30 pm"
+                    android:text=""
                     android:textAllCaps="true"
                     android:textColor="@color/textColor"
                     android:textSize="11sp"
@@ -144,7 +144,7 @@
                 android:layout_marginTop="-8dp"
                 android:fontFamily="@font/koho_regular"
                 android:letterSpacing=".08"
-                android:text="Clear"
+                android:text=""
                 android:textColor="@color/textColor"
                 android:textSize="22sp"
                 android:textStyle="bold" />
