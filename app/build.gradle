@@ -7,10 +7,10 @@ android {
 
     defaultConfig {
         applicationId "com.aniketjain.weatherapp"
-        minSdk 16
+        minSdk 19
         targetSdk 32
-        versionCode 3
-        versionName "1.0.3"
+        versionCode 4
+        versionName "1.0.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -20,6 +20,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    buildFeatures {
+        viewBinding true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -40,9 +43,9 @@ dependencies {
     implementation 'com.android.volley:volley:1.2.1'
     //location - lat, lon
     implementation 'com.google.android.gms:play-services-location:20.0.0'
-    //custom toasty
-    implementation 'com.github.GrenderG:Toasty:1.5.2'
-    //progress bar
+    //custom toast
+    implementation 'com.github.dev-aniketj:roasted-toast:1.0.2'
+    //custom progress
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
     //swipe refresh
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'

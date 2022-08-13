@@ -2,344 +2,54 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_bg_3"
+    android:background="@color/mainBGColor"
     tools:context=".HomeActivity">
+
+    <include
+        android:id="@+id/layout"
+        layout="@layout/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/day_rv"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="160dp" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress"
+        style="@style/SpinKitView.FadingCircle"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        app:SpinKit_Color="@color/textColor" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/main_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/layout_editText"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="77dp">
+        android:layout_marginTop="90dp">
 
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <com.github.ybq.android.spinkit.SpinKitView
-        android:id="@+id/progress_bar"
-        style="@style/SpinKitView.FadingCircle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="visible"
-        app:SpinKit_Color="@color/textColor" />
-
-    <RelativeLayout
-        android:id="@+id/main_container"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/day_rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:id="@+id/layout_editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="40dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/center_box"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/editText_city"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginBottom="12dp"
-                android:background="@null"
-                android:clickable="true"
-                android:focusableInTouchMode="true"
-                android:fontFamily="@font/koho_regular"
-                android:gravity="center_horizontal"
-                android:hint="ENTER CITY NAME"
-                android:imeOptions="actionGo"
-                android:inputType="textCapCharacters"
-                android:maxLength="18"
-                android:textAllCaps="true"
-                android:textColor="@color/textColor"
-                android:textColorHint="@color/textHintColor"
-                android:textCursorDrawable="@null"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/imageView_search_bar"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="13dp"
-                android:layout_marginRight="13dp"
-                android:background="?attr/selectableItemBackground"
-                android:src="@drawable/search_bar" />
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/layout_editText"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/koho_regular"
-                android:textAllCaps="true"
-                android:textColor="@color/textColor"
-                android:textSize="32sp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-14dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/koho_regular"
-                    android:letterSpacing="0.1"
-                    android:text="UPDATED AT"
-                    android:textColor="@color/textColor"
-                    android:textSize="10sp" />
-
-                <TextView
-                    android:id="@+id/textView_updated_at"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="-6dp"
-                    android:fontFamily="@font/koho_regular"
-                    android:textAllCaps="true"
-                    android:textColor="@color/textColor"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linear_center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView_condition"
-                android:layout_width="175dp"
-                android:layout_height="175dp" />
-
-            <TextView
-                android:id="@+id/textView_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-8dp"
-                android:fontFamily="@font/koho_regular"
-                android:letterSpacing=".08"
-                android:text="Clear"
-                android:textColor="@color/textColor"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="95dp"
-            android:layout_below="@id/linear_center"
-            android:layout_centerHorizontal="true"
-            android:layout_marginHorizontal="40dp"
-            android:layout_marginTop="14dp"
-            android:background="@drawable/center_box"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView_temp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/koho_regular"
-                android:textAllCaps="true"
-                android:textColor="@color/textColor"
-                android:textSize="50sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-22dp"
-                android:alpha=".75"
-                android:paddingHorizontal="16dp"
-                android:weightSum="2">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/min_temp_icon" />
-
-                    <TextView
-                        android:id="@+id/textView_min_temp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:fontFamily="@font/koho_regular"
-                        android:textAllCaps="true"
-                        android:textColor="@color/textColor"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/max_temp_icon" />
-
-                    <TextView
-                        android:id="@+id/textView_max_temp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:fontFamily="@font/koho_regular"
-                        android:textAllCaps="true"
-                        android:textColor="@color/textColor"
-                        android:textSize="16sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="14dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingHorizontal="6dp"
-            android:weightSum="3">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/pressure_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/koho_regular"
-                    android:text="PRESSURE"
-                    android:textColor="@color/textColor"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/textView_pressure"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="-6dp"
-                    android:fontFamily="@font/koho_regular"
-                    android:textColor="@color/textColor"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/wind_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/koho_regular"
-                    android:text="WIND"
-                    android:textColor="@color/textColor"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/textView_wind_speed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="-6dp"
-                    android:fontFamily="@font/koho_regular"
-                    android:textColor="@color/textColor"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/humidity_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/koho_regular"
-                    android:text="HUMIDITY"
-                    android:textColor="@color/textColor"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/textView_humidity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="-6dp"
-                    android:fontFamily="@font/koho_regular"
-                    android:textColor="@color/textColor"
-                    android:textSize="14sp" />
-            </LinearLayout>
-        </LinearLayout>
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

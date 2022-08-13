@@ -10,8 +10,8 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_main"
         android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_main"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_main_round"
         android:supportsRtl="true"

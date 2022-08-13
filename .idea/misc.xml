@@ -8,6 +8,14 @@
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/WeatherApp/app/src/main/res/drawable/main_bg.xml" value="0.1215" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/WeatherApp/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/WeatherApp/app/src/main/res/mipmap-anydpi-v26/ic_main.xml" value="0.18" />
+        <entry key="..\:/Users/Aniket/Documents/GitHub/Weather-App/app/src/main/res/drawable/day_block_bg.xml" value="0.1" />
+        <entry key="..\:/Users/Aniket/Documents/GitHub/Weather-App/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.2115" />
+        <entry key="..\:/Users/Aniket/Documents/GitHub/Weather-App/app/src/main/res/drawable/ic_baseline_error_outline_24.xml" value="0.2115" />
+        <entry key="..\:/Users/Aniket/Documents/GitHub/Weather-App/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Users/Aniket/Documents/GitHub/Weather-App/app/src/main/res/layout/day_item_layout.xml" value="0.5" />
+        <entry key="..\:/Users/Aniket/Documents/GitHub/Weather-App/app/src/main/res/layout/hour_item_layout.xml" value="0.5" />
+        <entry key="..\:/Users/Aniket/Documents/GitHub/Weather-App/app/src/main/res/layout/main_layout.xml" value="0.18" />
+        <entry key="..\:/Users/Aniket/Documents/GitHub/Weather-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>
     </option>
   </component>
