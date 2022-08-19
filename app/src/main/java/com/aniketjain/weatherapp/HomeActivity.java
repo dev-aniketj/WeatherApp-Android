@@ -98,6 +98,7 @@ public class HomeActivity extends AppCompatActivity {
                 try {
                     //it was deprecated but still work
                     startActivityForResult(intent,REQUEST_CODE_EXTRA_INPUT);
+
                 }catch (Exception e){
                     Log.d("Error Voice", "Mic Error:  "+e);
                 }
