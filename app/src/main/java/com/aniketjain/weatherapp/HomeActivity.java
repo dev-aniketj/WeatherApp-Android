@@ -7,16 +7,20 @@ import static com.aniketjain.weatherapp.network.InternetConnectivity.isInternetC
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 
+
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -43,8 +47,10 @@ import com.google.android.play.core.tasks.Task;
 import org.json.JSONException;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -53,9 +59,8 @@ public class HomeActivity extends AppCompatActivity {
     private String name, updated_at, description, temperature, min_temperature, max_temperature, pressure, wind_speed, humidity;
     private int condition;
     private long update_time, sunset, sunrise;
-
     private String city = "";
-
+    private int REQUEST_CODE_EXTRA_INPUT = 101;
     private ActivityHomeBinding binding;
 
     @Override
@@ -82,7 +87,38 @@ public class HomeActivity extends AppCompatActivity {
         // getting data using internet connection
         getDataUsingNetwork();
 
+        //Mic Search
+        binding.layout.micSearchId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, Locale.getDefault());
+                intent.putExtra(RecognizerIntent.EXTRA_PROMPT,REQUEST_CODE_EXTRA_INPUT);
+                try {
+                    //it was deprecated but still work
+                    startActivityForResult(intent,REQUEST_CODE_EXTRA_INPUT);
+                }catch (Exception e){
+                    Log.d("Error Voice", "Mic Error:  "+e);
+                }
+            }
+        });
+
     }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_EXTRA_INPUT){
+            if(resultCode == RESULT_OK && data!=null){
+                ArrayList<String> arrayList = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                binding.layout.cityEt.setText(Objects.requireNonNull(arrayList).get(0));
+
+            }
+        }
+    }
+
 
     private void setNavigationBarColor() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

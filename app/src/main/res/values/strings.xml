@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Weather Forecast</string>
+    <string name="mic_desc">mic for search</string>
 </resources>
