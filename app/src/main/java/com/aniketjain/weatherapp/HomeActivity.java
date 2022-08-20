@@ -60,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
     private int condition;
     private long update_time, sunset, sunrise;
     private String city = "";
-    private int REQUEST_CODE_EXTRA_INPUT = 101;
+    private final int REQUEST_CODE_EXTRA_INPUT = 101;
     private ActivityHomeBinding binding;
 
     @Override
