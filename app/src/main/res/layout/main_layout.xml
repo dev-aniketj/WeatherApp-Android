@@ -19,17 +19,30 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/search_parent"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_centerInParent="true"
             android:background="@drawable/edittext_bg"
             tools:ignore="UselessParent">
 
+            <ImageView
+                android:id="@+id/mic_search_id"
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/mic_desc"
+                android:scaleType="fitCenter"
+                android:src="@drawable/nion_mic_icon" />
+
             <EditText
                 android:id="@+id/city_et"
-                android:layout_width="match_parent"
+                android:layout_width="314dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="@dimen/_30sdp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="12dp"

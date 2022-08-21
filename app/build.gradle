@@ -51,4 +51,8 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     //App Auto Update Feature
     implementation 'com.google.android.play:core:1.10.3'
+    //For Responsive screen size
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    //Lotti files
+    implementation 'com.airbnb.android:lottie:5.2.0'
 }
