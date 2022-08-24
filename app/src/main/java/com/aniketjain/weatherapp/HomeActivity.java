@@ -249,6 +249,7 @@ public class HomeActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void updateUI() {
         binding.layout.nameTv.setText(name);
+        updated_at = translate(updated_at);
         binding.layout.updatedAtTv.setText(updated_at);
         binding.layout.conditionIv.setImageResource(
                 getResources().getIdentifier(
@@ -263,6 +264,12 @@ public class HomeActivity extends AppCompatActivity {
         binding.layout.pressureTv.setText(pressure + " mb");
         binding.layout.windTv.setText(wind_speed + " km/h");
         binding.layout.humidityTv.setText(humidity + "%");
+    }
+
+    private String translate(String dayToTranslate) {
+        String[] dayToTranslateSplit = dayToTranslate.split(" ");
+        dayToTranslateSplit[0] = UpdateUI.TranslateDay(dayToTranslateSplit[0].trim(), getApplicationContext());
+        return dayToTranslateSplit[0].concat(" " + dayToTranslateSplit[1]);
     }
 
     private void hideProgressBar() {

@@ -87,7 +87,7 @@ public class DaysAdapter extends RecyclerView.Adapter<DaysAdapter.DayViewHolder>
 
     @SuppressLint("SetTextI18n")
     private void updateUI(DayViewHolder holder) {
-        String day = translateDay(updated_at);
+        String day = UpdateUI.TranslateDay(updated_at, context);
         holder.dTime.setText(day);
         holder.temp_min.setText(min + "°C");
         holder.temp_max.setText(max + "°C");
@@ -100,34 +100,6 @@ public class DaysAdapter extends RecyclerView.Adapter<DaysAdapter.DayViewHolder>
                         "drawable",
                         context.getPackageName()
                 ));
-    }
-
-    private String translateDay(String dayToBeTranslated) {
-        String localeLanguage = Locale.getDefault().getDisplayCountry();
-        if(localeLanguage.equals(Locale.ENGLISH)){
-            return dayToBeTranslated;
-        }
-        return  TranslateDay(dayToBeTranslated);
-    }
-
-    private String TranslateDay(String dayToBeTranslated) {
-        switch (dayToBeTranslated.trim()){
-            case "Monday":
-                return context.getResources().getString(R.string.monday);
-            case "Tuesday":
-                return context.getResources().getString(R.string.tuesday);
-            case "Wednesday":
-                return context.getResources().getString(R.string.wednesday);
-            case "Thursday":
-                return context.getResources().getString(R.string.thursday);
-            case "Friday":
-                return context.getResources().getString(R.string.friday);
-            case "Saturday":
-                return context.getResources().getString(R.string.saturday);
-            case "Sunday":
-                return context.getResources().getString(R.string.sunday);
-        }
-        return dayToBeTranslated;
     }
 
     private void hideProgressBar(DayViewHolder holder) {
