@@ -53,7 +53,7 @@
                 android:focusableInTouchMode="true"
                 android:fontFamily="@font/koho_regular"
                 android:gravity="center_horizontal"
-                android:hint="ENTER CITY NAME"
+                android:hint="@string/enter_city_name"
                 android:imeOptions="actionGo"
                 android:inputType="textCapCharacters"
                 android:maxLength="21"
@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/koho_regular"
                     android:letterSpacing="0.1"
-                    android:text="UPDATED AT"
+                    android:text="@string/updated_at"
                     android:textColor="@color/textColor"
                     android:textSize="8sp" />
 
@@ -268,7 +268,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/koho_regular"
-                android:text="PRESSURE"
+                android:text="@string/pressure"
                 android:textColor="@color/textColor"
                 android:textSize="14sp" />
 
@@ -298,7 +298,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/koho_regular"
-                android:text="WIND"
+                android:text="@string/wind"
                 android:textColor="@color/textColor"
                 android:textSize="14sp" />
 
@@ -328,7 +328,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/koho_regular"
-                android:text="HUMIDITY"
+                android:text="@string/humidity"
                 android:textColor="@color/textColor"
                 android:textSize="14sp" />
 

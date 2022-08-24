@@ -87,7 +87,8 @@ public class DaysAdapter extends RecyclerView.Adapter<DaysAdapter.DayViewHolder>
 
     @SuppressLint("SetTextI18n")
     private void updateUI(DayViewHolder holder) {
-        holder.dTime.setText(updated_at);
+        String day = translateDay(updated_at);
+        holder.dTime.setText(day);
         holder.temp_min.setText(min + "°C");
         holder.temp_max.setText(max + "°C");
         holder.pressure.setText(pressure + " mb");
@@ -99,6 +100,34 @@ public class DaysAdapter extends RecyclerView.Adapter<DaysAdapter.DayViewHolder>
                         "drawable",
                         context.getPackageName()
                 ));
+    }
+
+    private String translateDay(String dayToBeTranslated) {
+        String localeLanguage = Locale.getDefault().getDisplayCountry();
+        if(localeLanguage.equals(Locale.ENGLISH)){
+            return dayToBeTranslated;
+        }
+        return  TranslateDay(dayToBeTranslated);
+    }
+
+    private String TranslateDay(String dayToBeTranslated) {
+        switch (dayToBeTranslated.trim()){
+            case "Monday":
+                return context.getResources().getString(R.string.monday);
+            case "Tuesday":
+                return context.getResources().getString(R.string.tuesday);
+            case "Wednesday":
+                return context.getResources().getString(R.string.wednesday);
+            case "Thursday":
+                return context.getResources().getString(R.string.thursday);
+            case "Friday":
+                return context.getResources().getString(R.string.friday);
+            case "Saturday":
+                return context.getResources().getString(R.string.saturday);
+            case "Sunday":
+                return context.getResources().getString(R.string.sunday);
+        }
+        return dayToBeTranslated;
     }
 
     private void hideProgressBar(DayViewHolder holder) {
@@ -115,7 +144,7 @@ public class DaysAdapter extends RecyclerView.Adapter<DaysAdapter.DayViewHolder>
         public DayViewHolder(@NonNull View itemView) {
             super(itemView);
             progress = itemView.findViewById(R.id.day_progress_bar);
-            layout = itemView.findViewById(R.id.day_rl);
+            layout = itemView.findViewById(R.id.day_relative_layout);
             dTime = itemView.findViewById(R.id.day_time);
             temp_min = itemView.findViewById(R.id.day_min_temp);
             temp_max = itemView.findViewById(R.id.day_max_temp);
@@ -125,5 +154,4 @@ public class DaysAdapter extends RecyclerView.Adapter<DaysAdapter.DayViewHolder>
             icon = itemView.findViewById(R.id.day_icon);
         }
     }
-
 }
