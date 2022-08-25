@@ -1,5 +1,9 @@
 package com.aniketjain.weatherapp.update;
 
+import android.content.Context;
+
+import com.aniketjain.weatherapp.R;
+
 public class UpdateUI {
 
     public static String getIconID(int condition, long update_time, long sunrise, long sunset) {
@@ -28,5 +32,25 @@ public class UpdateUI {
         else if (condition == 803 || condition == 804)
             return "broken_clouds";
         return null;
+    }
+
+    public static String TranslateDay(String dayToBeTranslated, Context context) {
+        switch (dayToBeTranslated.trim()){
+            case "Monday":
+                return context.getResources().getString(R.string.monday);
+            case "Tuesday":
+                return context.getResources().getString(R.string.tuesday);
+            case "Wednesday":
+                return context.getResources().getString(R.string.wednesday);
+            case "Thursday":
+                return context.getResources().getString(R.string.thursday);
+            case "Friday":
+                return context.getResources().getString(R.string.friday);
+            case "Saturday":
+                return context.getResources().getString(R.string.saturday);
+            case "Sunday":
+                return context.getResources().getString(R.string.sunday);
+        }
+        return dayToBeTranslated;
     }
 }
