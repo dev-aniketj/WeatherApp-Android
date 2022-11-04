@@ -1,5 +1,7 @@
 # Weather App 🌧️🌧️💙💙
 
+[![platform](https://img.shields.io/badge/platform-Android-brightgreen.svg?style=flat)](https://www.android.com)
+
 #### Simple and Beautiful Weather App using Java.
 
 I am using **https://openweathermap.org/** to get all the data using JSON file.
@@ -26,8 +28,6 @@ I am using **https://openweathermap.org/** to get all the data using JSON file.
 ##### Note :
 
 > Single API key on have
-
-[![platform](https://img.shields.io/badge/platform-Android-brightgreen.svg?style=flat)](https://www.android.com)
 
 ## Preview
 
