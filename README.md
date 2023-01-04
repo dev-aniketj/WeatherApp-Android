@@ -1,6 +1,7 @@
 # Weather App 🌧️🌧️💙💙
 
-[![platform](https://img.shields.io/badge/platform-Android-brightgreen.svg?style=flat)](https://www.android.com)
+![Platform](https://img.shields.io/badge/platform-Android-brightgreen.svg?color=4078c0&style=for-the-badge)
+![File Size](https://img.shields.io/github/repo-size/dev-aniketj/Weather-App?color=4078c0&style=for-the-badge)
 
 #### Simple and Beautiful Weather App using Java.
 
