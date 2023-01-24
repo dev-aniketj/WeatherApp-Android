@@ -3,7 +3,7 @@
 ![Platform](https://img.shields.io/badge/platform-Android-brightgreen.svg?color=4078c0&style=for-the-badge)
 ![File Size](https://img.shields.io/github/repo-size/dev-aniketj/Weather-App?color=4078c0&style=for-the-badge)
 
-#### Simple and Beautiful Weather App using Java. 
+#### Simple and Beautiful Weather App using Java.
 
 I am using **https://openweathermap.org/** to get all the data using JSON file.
 
