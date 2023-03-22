@@ -1,7 +1,7 @@
 package com.aniketjain.weatherapp;
 
 public class conflict {
-    Integer roll;
+    float roll;
     String name;
 
     public conflict(Integer roll) {
