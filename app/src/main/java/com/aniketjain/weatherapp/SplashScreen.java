@@ -12,13 +12,11 @@ import com.aniketjain.weatherapp.databinding.ActivitySplashScreenBinding;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {
-    private ActivitySplashScreenBinding binding;
-    private final int SPLASH_TIME = 4000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySplashScreenBinding.inflate(getLayoutInflater());
+        ActivitySplashScreenBinding binding = ActivitySplashScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         //Removing status bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -27,6 +25,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void splashScreen() {
+        int SPLASH_TIME = 4000;
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
             startActivity(intent);

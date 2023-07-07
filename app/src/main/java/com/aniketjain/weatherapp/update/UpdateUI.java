@@ -35,7 +35,7 @@ public class UpdateUI {
     }
 
     public static String TranslateDay(String dayToBeTranslated, Context context) {
-        switch (dayToBeTranslated.trim()){
+        switch (dayToBeTranslated.trim()) {
             case "Monday":
                 return context.getResources().getString(R.string.monday);
             case "Tuesday":
