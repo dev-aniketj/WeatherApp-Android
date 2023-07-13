@@ -3,6 +3,18 @@
 ![Platform](https://img.shields.io/badge/platform-Android-brightgreen.svg?color=00ADB5&style=for-the-badge)
 ![Repo Size](https://img.shields.io/github/repo-size/dev-aniketj/Weather-App?color=00ADB5&style=for-the-badge)
 
+## Preview
+
+<img src="https://github.com/dev-aniketj/Weather-App/blob/master/SS/gif1.gif" width="200"/>
+
+## Screenshots
+
+<p float="left">
+	<img src="https://github.com/dev-aniketj/Weather-App/blob/master/SS/image1.jpg" width="200"/>
+	<img src="https://github.com/dev-aniketj/Weather-App/blob/master/SS/image2.jpg" width="200"/>
+</p>
+
+
 #### Simple and Beautiful Weather App using Java.
 
 I am using **https://openweathermap.org/** to get all the data using JSON file.
@@ -35,17 +47,6 @@ public final static String API_KEY = "81a26c8f0de407b94623e9f43e825679";
 ##### Note :
 
 > Single API key on have
-
-## Preview
-
-<img src="https://github.com/dev-aniketj/Weather-App/blob/master/SS/gif1.gif" width="200"/>
-
-## Screenshots
-
-<p float="left">
-	<img src="https://github.com/dev-aniketj/Weather-App/blob/master/SS/image1.jpg" width="200"/>
-	<img src="https://github.com/dev-aniketj/Weather-App/blob/master/SS/image2.jpg" width="200"/>
-</p>
 
 ## Contributing
 
