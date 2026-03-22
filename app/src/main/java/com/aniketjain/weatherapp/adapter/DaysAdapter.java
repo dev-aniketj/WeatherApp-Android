@@ -96,7 +96,7 @@ public class DaysAdapter extends RecyclerView.Adapter<DaysAdapter.DayViewHolder>
         holder.humidity.setText(humidity + "%");
         holder.icon.setImageResource(
                 context.getResources().getIdentifier(
-                        UpdateUI.getIconID(condition, update_time, sunrise, sunset),
+                        UpdateUI.getWeatherIconDrawableName(condition, update_time, sunrise, sunset),
                         "drawable",
                         context.getPackageName()
                 ));
