@@ -6,7 +6,7 @@ import com.aniketjain.weatherapp.R;
 
 public class UpdateUI {
 
-    public static String getIconID(int condition, long update_time, long sunrise, long sunset) {
+    public static String getWeatherIconDrawableName(int condition, long update_time, long sunrise, long sunset) {
         if (condition >= 200 && condition <= 232)
             return "thunderstorm";
         else if (condition >= 300 && condition <= 321)

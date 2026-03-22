@@ -249,7 +249,7 @@ public class HomeActivity extends AppCompatActivity {
         binding.layout.updatedAtTv.setText(updated_at);
         binding.layout.conditionIv.setImageResource(
                 getResources().getIdentifier(
-                        UpdateUI.getIconID(condition, update_time, sunrise, sunset),
+                        UpdateUI.getWeatherIconDrawableName(condition, update_time, sunrise, sunset),
                         "drawable",
                         getPackageName()
                 ));
